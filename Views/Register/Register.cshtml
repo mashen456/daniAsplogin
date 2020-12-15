@@ -1,0 +1,159 @@
+﻿@model MyFirstApp.Models.UserModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@*<h2>Register</h2>
+
+    @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>UserModel</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Register" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+
+
+
+
+<!-- Google Fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+
+
+
+<div class="d-md-flex h-md-100 align-items-center">
+
+    <!-- Linke seite -->
+
+    <div class="col-md-6 p-0 bg-white h-md-100 text-center">
+
+        <img src="~/Content/Home2.png" class="img-fluid imghome" alt="Responsive image">
+        <h1>Text</h1>
+        <p>skmhgwskhghstesthshsth</p>
+        <p>skmhgwskhghstesthshsth</p>
+        <p>skmhgwskhghstesthshsth</p>
+    </div>
+
+
+    <!-- Rechte Seite -->
+
+    <div class=" col-md-6 bglightblue h-md-100 pt pb">
+        <div class=" d-md-flex align-items-center h-md-100 p-5 justify-content-center text-center">
+            <footer>
+                <div>
+
+                    <p>&copy; @DateTime.Now.Year - Meine ASP.NET-Anwendung</p>
+                </div>
+            </footer>
+            <div class="loginbox "</div>
+            <img src="~/Content/Kalender2.png" class="img-fluid imgkalender" alt="Responsive image">
+            <h1 class="frobotob">Register</h1>
+            <p class="frobotos">Register your account.</p>
+
+            @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+
+                <div class="row">
+
+
+
+
+                    <div class="middle" style="margin-top:10px">
+
+
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control frobotos text-center ", placeholder = "Username" } })
+
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="middle" style="margin-top:10px">
+                        @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "form-control frobotos text-center", placeholder = "Password" })
+
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="middle" style="margin-top:10px">
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control frobotos text-center", placeholder = "Confirm Password" } })
+
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="margin-top:10px">
+                        <input type="submit" value="Register" class="btn btn-default" />
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div style="margin-top:5px; text-align: left; margin-left: 25%;">
+                        @Html.ActionLink("Login", "Index", "Login")
+                    </div>
+                </div>
+
+
+
+            }
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+

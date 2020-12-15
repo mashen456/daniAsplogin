@@ -1,0 +1,91 @@
+﻿@model MyFirstApp.Models.UserModel
+
+<!-- Google Fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+
+
+
+
+<div class="d-md-flex h-md-100 align-items-center">
+
+    <!-- Linke seite -->
+
+    <div class="col-md-6 p-0 bg-white h-md-100 text-center">
+
+        <img src="~/Content/Home2.png" class="img-fluid imghome" alt="Responsive image">
+        <h1>Text</h1>
+        <p>skmhgwskhghstesthshsth</p>
+        <p>skmhgwskhghstesthshsth</p>
+        <p>skmhgwskhghstesthshsth</p>
+    </div>
+
+
+    <!-- Rechte Seite -->
+
+    <div class=" col-md-6 p-0 bglightblue h-md-100 pt ">
+        <div class=" d-md-flex align-items-center h-md-100 p-5 justify-content-center text-center">
+            <div class="loginbox "</div>
+            <img src="~/Content/Kalender2.png" class="img-fluid imgkalender" alt="Responsive image">
+            <h1 class="frobotob">Login</h1>
+            <p class="frobotos">Sign in to your account.</p>
+
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                
+                <div class="row">
+
+
+                   
+
+                    <div class="middle" style="margin-top:10px">
+
+
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control frobotos text-center ", placeholder = "Username" } })
+
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="middle" style="margin-top:10px">
+                        @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "form-control frobotos text-center", placeholder = "Password" })
+
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div style="margin-top:10px">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div style="margin-top:5px; text-align: left; margin-left: 25%;">
+                        @Html.ActionLink("Register", "Index", "Register")
+                    </div>
+                </div>
+
+                
+
+            }
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+   
